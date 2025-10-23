@@ -2,7 +2,7 @@
 .DS_Store
 .AppleDouble
 .LSOverride
-.class
+*.class
 
 # Icon must end with two \r
 Icon
