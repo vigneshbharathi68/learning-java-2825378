@@ -1,4 +1,5 @@
-
+import Inheritance.ModArrayList;
+import Inheritance.SalesPerson;
 
 public class Main {
   public static void main (String[] args) {
@@ -19,8 +20,28 @@ public class Main {
     // employee1.displaySalary();
     // employee2.displaySalary(); 
 
-    String name = "Vignesh";
+    // String name = "Vignesh";
 
-    System.out.println(name.length());
+    // System.out.println(name.length());
+
+    // BankAccount account1 = new BankAccount("Vignesh", 5000);
+    // account1.deposit(2000);
+    // account1.withdraw(1000);
+
+
+    // SalesPerson salesPerson1 = new SalesPerson("Alice", 50000, 30, 0.10);
+    // System.out.println(salesPerson1.getAnnualBonus());
+
+    ModArrayList<Integer> modList = new ModArrayList<>();
+    modList.add(0);
+    modList.add(10);
+    modList.add(20);
+    modList.add(30);
+    System.out.println(modList.getUsingMod(1)); // Output: 10
+    System.out.println(modList.getUsingMod(-2)); // Output: 20
+    System.out.println(modList.getUsingMod(40)); // Output: 30
+
+
+
   }
 }

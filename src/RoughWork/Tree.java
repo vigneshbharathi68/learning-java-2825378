@@ -1,3 +1,4 @@
+package RoughWork;
 import java.awt.*;
 
 public class Tree {
