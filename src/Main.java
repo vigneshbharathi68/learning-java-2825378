@@ -1,7 +1,23 @@
-import Inheritance.ModArrayList;
-import Inheritance.SalesPerson;
+import Polymorphism.ConditionArrayList;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.function.Predicate;
 
 public class Main {
+
+  public static void addRandomNumber(ArrayList<Integer> list) {
+      if (list == null) {
+          throw new IllegalArgumentException("List cannot be null");
+      }
+      Random random = new Random();
+      int n = random.nextInt(1000);
+      if (list instanceof ConditionArrayList conditionList) {
+        while (!conditionList.isEligible(n)) {
+          n = random.nextInt(1000);
+        }
+      }
+      list.add(n);
+    }
   public static void main (String[] args) {
     // Tree myFavoriteOakTree = new Tree(120, 12, TreeType.OAK);
 
@@ -32,15 +48,30 @@ public class Main {
     // SalesPerson salesPerson1 = new SalesPerson("Alice", 50000, 30, 0.10);
     // System.out.println(salesPerson1.getAnnualBonus());
 
-    ModArrayList<Integer> modList = new ModArrayList<>();
-    modList.add(0);
-    modList.add(10);
-    modList.add(20);
-    modList.add(30);
-    System.out.println(modList.getUsingMod(1)); // Output: 10
-    System.out.println(modList.getUsingMod(-2)); // Output: 20
-    System.out.println(modList.getUsingMod(40)); // Output: 30
+    // ModArrayList<Integer> modList = new ModArrayList<>();
+    // modList.add(0);
+    // modList.add(10);
+    // modList.add(20);
+    // modList.add(30);
+    // System.out.println(modList.getUsingMod(1)); // Output: 10
+    // System.out.println(modList.getUsingMod(-2)); // Output: 20
+    // System.out.println(modList.getUsingMod(40)); // Output: 30
 
+
+    // OddArrayList oddList = new OddArrayList(1,2,3,4,5,6);
+    // System.out.println(oddList); // Output: [1, 3, 5, 1, 3]
+
+
+    // ArrayList<Integer> list = new ArrayList<>();
+
+    // list.add(1);
+    // list.add(2);
+    // list.add(3);
+    // System.out.println(list); // Output: [1, 2, 3]
+
+    Predicate<Integer> isDivisibleBy3 = n -> n % 3 == 0;
+    ConditionArrayList divisibleByThreeList = new ConditionArrayList(isDivisibleBy3, 1,2,3,4,5,6);
+    System.out.println(divisibleByThreeList); // Output: [3, 6]
 
 
   }
